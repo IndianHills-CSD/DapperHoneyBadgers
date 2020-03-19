@@ -4,16 +4,31 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Honey Badger Website</title>
+    <link rel="stylesheet" type="text/css"href="StyleSheet.css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+    <div id="container">
+        <header>
+            <img src="https://i.imgur.com/tfvRE74.jpg" alt="Logo" />
+        </header>
+        <nav>
+            <ul>
+                <li><a href="Index.aspx">Index</a></li>
+                <li><a href="Products.aspx">Products</a></li>
+                <li><a href="Cart.aspx">Cart</a></li>
+                <li><a href="Orders.aspx">Orders</a></li>
+                <li><a href="Account.aspx">Account</a></li>
+            </ul>
+        </nav>
+        <form id="form1" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
