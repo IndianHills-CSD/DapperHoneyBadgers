@@ -16,7 +16,7 @@
         </header>
         <nav>
             <ul>
-                <li><a href="Index.aspx">Index</a></li>
+                <li><a href="Index.aspx">Home</a></li>
                 <li><a href="Products.aspx">Products</a></li>
                 <li><a href="Cart.aspx">Cart</a></li>
                 <li><a href="Orders.aspx">Orders</a></li>
@@ -29,6 +29,18 @@
                 </asp:ContentPlaceHolder>
             </div>
         </form>
+        
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="Index.aspx">Home</a></li>
+                    <li><a href="Products.aspx">Products</a></li>
+                    <li><a href="Cart.aspx">Cart</a></li>
+                    <li><a href="Orders.aspx">Orders</a></li>
+                    <li><a href="Account.aspx">Account</a></li>
+                </ul>
+            </nav>
+    </footer>
     </div>
 </body>
 </html>
