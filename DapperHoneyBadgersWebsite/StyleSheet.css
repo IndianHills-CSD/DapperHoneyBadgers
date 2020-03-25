@@ -51,3 +51,27 @@ nav li a:hover{
     background-color:green;
 }
 
+/* Index */
+
+.greenBorder{
+    border:1px solid green;
+}
+
+#featuredItemSection {
+    overflow: auto;
+    border-bottom: 3px dotted green;
+    color:red;
+}
+
+.featuredItemContainer {
+    float: left;
+    width:30%;
+    margin:5px 1%;
+    height:100%;
+}
+
+.featuredItemContent {
+    vertical-align:central;
+    width:100%;
+    text-shadow:2px 2px 2px green;
+}
