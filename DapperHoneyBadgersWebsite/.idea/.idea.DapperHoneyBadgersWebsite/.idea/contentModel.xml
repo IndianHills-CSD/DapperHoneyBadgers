@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Josh\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Josh\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_DapperHoneyBadgersWebsite.741101560.00" t="ExcludeRecursive" />
+    <e p="D:\GitHub\DapperHoneyBadgers\DapperHoneyBadgersWebsite" t="IncludeRecursive">
+      <e p="DapperHoneyBadgersWebsite.csproj" t="IncludeRecursive" />
+      <e p="DapperHoneyBadgersWebsite.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
