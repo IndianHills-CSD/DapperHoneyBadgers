@@ -35,6 +35,7 @@
                     <td>Insert OrderDate</td>
                     <td>Insert ProductID</td>
                 </tr>   <!-- END Data Row -->
+                <button class="home">Back To Home</button>
             </table>
         </div>  <!-- END class = infoTable -->
     </div>  <!-- END id = infoContainer -->
