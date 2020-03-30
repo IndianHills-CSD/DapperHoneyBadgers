@@ -75,3 +75,35 @@ nav li a:hover{
     width:100%;
     text-shadow:2px 2px 2px green;
 }
+#ContentSection {
+    overflow: auto;
+    color: red;
+}
+
+    #ContentSection header {
+        border: solid green;
+        margin: 2%;
+    }
+
+.ContentCategoryContainer {
+    border: 3px solid green;
+    float: left;
+    width: 30%;
+    margin: 5px 1% 0px;
+    height: 100%;
+    text-align: center;
+}
+
+.TCon {
+    text-align: center;
+    margin: 0% 0% 3% 0%
+}
+
+    .TCon a {
+        padding: 3% 39% 3% 40%;
+        color: red;
+    }
+
+        .TCon a:hover {
+            background-color: green;
+        }
