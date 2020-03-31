@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account.aspx" />
+    <Content Include="CartLayout.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="OrderInfo.aspx" />
     <Content Include="StyleSheet.css" />
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartLayout.aspx.cs">
+      <DependentUpon>CartLayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartLayout.aspx.designer.cs">
+      <DependentUpon>CartLayout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
