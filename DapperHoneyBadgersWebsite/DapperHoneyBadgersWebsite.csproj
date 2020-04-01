@@ -73,6 +73,7 @@
     <Content Include="OrderInfo.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
+    <Content Include="WishlistItem.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.aspx.cs">
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WishlistItem.aspx.cs">
+      <DependentUpon>WishlistItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WishlistItem.aspx.designer.cs">
+      <DependentUpon>WishlistItem.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
