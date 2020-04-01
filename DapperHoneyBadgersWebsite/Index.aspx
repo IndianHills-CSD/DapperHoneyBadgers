@@ -22,4 +22,22 @@
             </div>
         </div>
     </div>
+        <div id="ContentSection">
+        <div class="ContentCategoryContainer">
+            <header>
+                <img src="https://c1.neweggimages.com/NeweggImage/ProductImage/20-331-188-V02.jpg" alt="Content" />
+            </header>
+            <div class="TCon">
+                <a href ="Hardrives.aspx">Hardrives</a>
+            </div>
+        </div>  
+        <div class="ContentCategoryContainer">
+            <header>
+                <img src="https://c1.neweggimages.com/NeweggImage/ProductImage/20-331-188-V02.jpg" alt="Content" />
+            </header>
+            <div class="TCon">
+                <a href ="Hardrives.aspx">Hardrives</a>
+            </div>
+        </div>  
+    </div>
 </asp:Content>
