@@ -192,3 +192,9 @@ td.itemPrice {
 td.grandTotal {
     padding: 5px 10px 5px 5px;
 }
+
+/* Wishlist Styling */
+table.wishlistTable {
+    background-color: white;
+}
+
