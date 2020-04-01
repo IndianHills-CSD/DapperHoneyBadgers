@@ -1,3 +1,7 @@
+﻿* {
+    color:red;
+}
+
 ﻿body {
     background-color: #303030;
     background-size: cover;
@@ -111,6 +115,31 @@ nav li a:hover{
     background-color: green;
 }
 
+/* Account */
+
+.floatContainer{
+    overflow:auto;
+}
+
+.floatLeftTwoColumn{
+    float:left;
+    clear:left;
+    margin-left:10%;
+    padding:5px;
+}
+
+.floatRightTwoColumn{
+    float:right;
+    clear:right;
+    margin-right:10%;
+    padding:5px;
+}
+
+.label{
+    width:80px;
+    display:inline-block;
+}
+
 /* Order Info Styling */
 .center {
     width: 100%;
@@ -118,7 +147,8 @@ nav li a:hover{
 }
 
 table.infoTable {
-    border: 2px solid #2793bf;
+    border: 2px solid #2793bf
+      
     padding: 0;
     position: relative;
     color: #2593be;
@@ -209,6 +239,11 @@ td.itemPrice {
 
 .qtyInput {
     width: 40px;
+}
+
+/* Table right wall *
+table tr td:last-child {
+    border-right: 0;
 }
 
 /* Table footer style tags*/
