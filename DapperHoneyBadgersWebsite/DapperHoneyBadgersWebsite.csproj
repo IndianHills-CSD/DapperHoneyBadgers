@@ -68,10 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account.aspx" />
+    <Content Include="CartLayout.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="OrderInfo.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
+    <Content Include="WishlistItem.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.aspx.cs">
@@ -80,6 +82,13 @@
     </Compile>
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartLayout.aspx.cs">
+      <DependentUpon>CartLayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartLayout.aspx.designer.cs">
+      <DependentUpon>CartLayout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -102,6 +111,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WishlistItem.aspx.cs">
+      <DependentUpon>WishlistItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WishlistItem.aspx.designer.cs">
+      <DependentUpon>WishlistItem.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

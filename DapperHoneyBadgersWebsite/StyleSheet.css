@@ -112,7 +112,6 @@ nav li a:hover{
 }
 
 /* Order Info Styling */
-/* Order Info Styling */
 .center {
     width: 100%;
     margin: 35px 0;
@@ -168,6 +167,53 @@ table td {
 
 table tr:first-child td {
     border-top: 0;
+}
+
+/* Cart Styling */
+table.cartTable {
+    margin: 35px auto;
+    border: 5px solid #2793bf;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+thead.cartHead {
+    color: #2793bf;
+    text-align: left;
+    font-size: 22px;
+}
+
+tfoot.cartFoot {
+    color: #2793bf;
+    text-align: right;
+}
+
+/* Table header style tags */
+th.tableHeadText {
+    padding-left: 35px;
+}
+
+/* Table body style tags */
+td.imgContainer {
+    padding: 35px;
+    width: 100px;
+}
+
+td.itemDescript, a {
+    color: #2793bf;
+}
+
+td.itemPrice {
+    color: #2793bf;
+}
+
+.qtyInput {
+    width: 40px;
+}
+
+/* Table footer style tags*/
+td.grandTotal {
+    padding: 5px 10px 5px 5px;
 }
 
 table tr td:first-child {
