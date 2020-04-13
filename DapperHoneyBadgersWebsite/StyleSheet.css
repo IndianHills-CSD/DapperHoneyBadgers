@@ -1,30 +1,29 @@
 ﻿* {
-    color:red;
+    color: red;
 }
-
-﻿body {
+body {
     background-color: #303030;
     background-size: cover;
 }
 
-#container{
-    margin:0 auto;
-    width:960px;
-    background-color:#303030;
+#container {
+    margin: 0 auto;
+    width: 960px;
+    background-color: #303030;
     background-size: cover;
     background-repeat: repeat;
-    height:1200px;
+    height: 1200px;
 }
 
-header{
-    border-bottom:2px solid green;
+header {
+    border-bottom: 2px solid green;
 }
 
-header img{
-    display:block;
-    margin: 0 auto;
-    width:100%;
-}
+    header img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
 
 nav {
     border-top: 3px solid green;
@@ -33,64 +32,65 @@ nav {
     box-shadow: 1px 2px 3px green;
 }
 
-nav li {
-    list-style: none;
-    display: inline-block;
-    padding: 0;
-}
+    nav li {
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+    }
 
-nav li a {
-    text-decoration: none;
-    color: black;
-    width: 150px;
-    border: 1px solid green;
-    border-radius: 10%;
-    font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    float: left;
-    margin: 5px 10px;
-    text-align: center;
-    box-shadow: 1px 2px 3px green;
-    color: red;
-}
+        nav li a {
+            text-decoration: none;
+            color: black;
+            width: 150px;
+            border: 1px solid green;
+            border-radius: 10%;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            float: left;
+            margin: 5px 10px;
+            text-align: center;
+            box-shadow: 1px 2px 3px green;
+            color: red;
+        }
 
-nav li a:hover{
-    background-color:green;
-}
+            nav li a:hover {
+                background-color: green;
+            }
 
 /* Index */
 
-.greenBorder{
-    border:1px solid green;
+.greenBorder {
+    border: 1px solid green;
 }
 
 #featuredItemSection {
     overflow: auto;
     border-bottom: 3px dotted green;
-    color:red;
+    color: red;
 }
 
 .featuredItemContainer {
     float: left;
-    width:30%;
-    margin:5px 1%;
-    height:100%;
+    width: 30%;
+    margin: 5px 1%;
+    height: 100%;
 }
 
 .featuredItemContent {
-    vertical-align:central;
-    width:100%;
-    text-shadow:2px 2px 2px green;
+    vertical-align: central;
+    width: 100%;
+    text-shadow: 2px 2px 2px green;
 }
+
 #ContentSection {
     overflow: auto;
     color: red;
 }
 
-#ContentSection header {
-    border: solid green;
-    margin: 2%;
-}
+    #ContentSection header {
+        border: solid green;
+        margin: 2%;
+    }
 
 .ContentCategoryContainer {
     border: 3px solid green;
@@ -106,38 +106,38 @@ nav li a:hover{
     margin: 0% 0% 3% 0%
 }
 
-.TCon a {
-    padding: 3% 39% 3% 40%;
-    color: red;
-}
+    .TCon a {
+        padding: 3% 39% 3% 40%;
+        color: red;
+    }
 
-.TCon a:hover {
-    background-color: green;
-}
+        .TCon a:hover {
+            background-color: green;
+        }
 
 /* Account */
 
-.floatContainer{
-    overflow:auto;
+.floatContainer {
+    overflow: auto;
 }
 
-.floatLeftTwoColumn{
-    float:left;
-    clear:left;
-    margin-left:10%;
-    padding:5px;
+.floatLeftTwoColumn {
+    float: left;
+    clear: left;
+    margin-left: 10%;
+    padding: 5px;
 }
 
-.floatRightTwoColumn{
-    float:right;
-    clear:right;
-    margin-right:10%;
-    padding:5px;
+.floatRightTwoColumn {
+    float: right;
+    clear: right;
+    margin-right: 10%;
+    padding: 5px;
 }
 
-.label{
-    width:80px;
-    display:inline-block;
+.label {
+    width: 80px;
+    display: inline-block;
 }
 
 /* Order Info Styling */
@@ -147,8 +147,7 @@ nav li a:hover{
 }
 
 table.infoTable {
-    border: 2px solid #2793bf
-      
+    border: 2px solid #2793bf;
     padding: 0;
     position: relative;
     color: #2593be;
@@ -181,31 +180,32 @@ table.infoTable {
     box-shadow: 1px 2px 3px green;
     color: red;
 }
+
 table {
     border-collapse: collapse;
 }
 
-/* Inside borders of heading */
-table th {
-    border-bottom: 2px solid #2793bf;
-}
+    /* Inside borders of heading */
+    table th {
+        border-bottom: 2px solid #2793bf;
+    }
 
-/* Bottom borders for the cells inside table body */
-table td {
-    border-bottom: 2px solid #2793bf;
-}
+    /* Bottom borders for the cells inside table body */
+    table td {
+        border-bottom: 2px solid #2793bf;
+    }
 
-table tr:first-child td {
-    border-top: 0;
-}
+    table tr:first-child td {
+        border-top: 0;
+    }
 
-/* Cart Styling */
-table.cartTable {
-    margin: 35px auto;
-    border: 5px solid #2793bf;
-    border-collapse: collapse;
-    width: 80%;
-}
+    /* Cart Styling */
+    table.cartTable {
+        margin: 35px auto;
+        border: 5px solid #2793bf;
+        border-collapse: collapse;
+        width: 80%;
+    }
 
 thead.cartHead {
     color: #2793bf;
@@ -245,7 +245,6 @@ td.itemPrice {
 table tr td:last-child {
     border-right: 0;
 }
-
 /* Table footer style tags*/
 td.grandTotal {
     padding: 5px 10px 5px 5px;
