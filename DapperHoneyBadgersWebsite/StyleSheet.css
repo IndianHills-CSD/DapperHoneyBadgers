@@ -1,3 +1,7 @@
+﻿* {
+    color:red;
+}
+
 ﻿body {
     background-color: #303030;
     background-size: cover;
@@ -78,6 +82,63 @@ nav li a:hover{
     width:100%;
     text-shadow:2px 2px 2px green;
 }
+#ContentSection {
+    overflow: auto;
+    color: red;
+}
+
+#ContentSection header {
+    border: solid green;
+    margin: 2%;
+}
+
+.ContentCategoryContainer {
+    border: 3px solid green;
+    float: left;
+    width: 30%;
+    margin: 5px 1% 0px;
+    height: 100%;
+    text-align: center;
+}
+
+.TCon {
+    text-align: center;
+    margin: 0% 0% 3% 0%
+}
+
+.TCon a {
+    padding: 3% 39% 3% 40%;
+    color: red;
+}
+
+.TCon a:hover {
+    background-color: green;
+}
+
+/* Account */
+
+.floatContainer{
+    overflow:auto;
+}
+
+.floatLeftTwoColumn{
+    float:left;
+    clear:left;
+    margin-left:10%;
+    padding:5px;
+}
+
+.floatRightTwoColumn{
+    float:right;
+    clear:right;
+    margin-right:10%;
+    padding:5px;
+}
+
+.label{
+    width:80px;
+    display:inline-block;
+}
 
 /* Order Info Styling */
 .center {
@@ -86,7 +147,8 @@ nav li a:hover{
 }
 
 table.infoTable {
-    border: 2px solid #2793bf;
+    border: 2px solid #2793bf
+      
     padding: 0;
     position: relative;
     color: #2593be;
@@ -123,28 +185,19 @@ table {
     border-collapse: collapse;
 }
 
-    /* Inside borders of heading */
-    table th {
-        border-bottom: 2px solid #2793bf;
-    }
+/* Inside borders of heading */
+table th {
+    border-bottom: 2px solid #2793bf;
+}
 
-    /* Bottom borders for the cells inside table body */
-    table td {
-        border-bottom: 2px solid #2793bf;
-    }
+/* Bottom borders for the cells inside table body */
+table td {
+    border-bottom: 2px solid #2793bf;
+}
 
-    table tr:first-child td {
-        border-top: 0;
-    }
-
-    table tr td:first-child {
-        border-left: 0;
-    }
-
-    /* Table right wall */
-    table tr td:last-child {
-        border-right: 0;
-    }
+table tr:first-child td {
+    border-top: 0;
+}
 
 /* Cart Styling */
 table.cartTable {
@@ -165,12 +218,12 @@ tfoot.cartFoot {
     text-align: right;
 }
 
-    /* Table header style tags */
+/* Table header style tags */
 th.tableHeadText {
     padding-left: 35px;
 }
 
-    /* Table body style tags */
+/* Table body style tags */
 td.imgContainer {
     padding: 35px;
     width: 100px;
@@ -188,13 +241,29 @@ td.itemPrice {
     width: 40px;
 }
 
-    /* Table footer style tags*/
+/* Table right wall *
+table tr td:last-child {
+    border-right: 0;
+}
+
+/* Table footer style tags*/
 td.grandTotal {
     padding: 5px 10px 5px 5px;
 }
 
+<<<<<<< HEAD
 /* Wishlist Styling */
 table.wishlistTable {
     background-color: white;
 }
 
+=======
+table tr td:first-child {
+    border-left: 0;
+}
+
+/* Table right wall */
+table tr td:last-child {
+    border-right: 0;
+}
+>>>>>>> e768910ad0d98e091e4730195d92a1b71668afad
