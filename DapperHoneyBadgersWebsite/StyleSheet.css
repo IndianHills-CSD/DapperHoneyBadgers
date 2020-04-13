@@ -241,7 +241,7 @@ td.itemPrice {
     width: 40px;
 }
 
-/* Table right wall *
+/* Table right wall */
 table tr td:last-child {
     border-right: 0;
 }
@@ -251,13 +251,11 @@ td.grandTotal {
     padding: 5px 10px 5px 5px;
 }
 
-<<<<<<< HEAD
 /* Wishlist Styling */
 table.wishlistTable {
     background-color: white;
 }
 
-=======
 table tr td:first-child {
     border-left: 0;
 }
@@ -266,4 +264,3 @@ table tr td:first-child {
 table tr td:last-child {
     border-right: 0;
 }
->>>>>>> e768910ad0d98e091e4730195d92a1b71668afad
