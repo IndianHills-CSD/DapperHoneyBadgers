@@ -147,8 +147,7 @@ nav li a:hover{
 }
 
 table.infoTable {
-    border: 2px solid #2793bf
-      
+    border: 2px solid #2793bf;
     padding: 0;
     position: relative;
     color: #2593be;
