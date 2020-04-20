@@ -25,6 +25,10 @@ header img{
     width:100%;
 }
 
+footer {
+    clear: both;
+}
+
 nav {
     border-top: 3px solid green;
     border-bottom: 3px solid green;
@@ -341,3 +345,25 @@ table tr td:last-child {
     right: .25em;
     color: #595b64;
 }
+
+/*  ---------------------------- Item Details Page ---------------------------- */
+#itemInfo {
+    width: 960px;
+    padding: 40px;
+}
+
+#picBox {
+    border: 1px solid #2793bf;
+    width: 450px;
+    height: 410px;
+    float: left;
+    margin-bottom: 40px;
+}
+
+#itemName {
+    float: right;
+    width: 47%;
+    margin-right: 45px;
+    padding-top: 37px;
+    font-weight: bold;
+} 
