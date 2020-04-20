@@ -4,6 +4,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <!-- Wishlist Item Layout -->
+    
+    <!--
+        Use jquery or something to make a popup "float" over the screen when selected? 
+    -->
+
+    <div class="btnBox">
+        <input type="button" id="btnWishlists" value="My Wishlists" />
+        <input type="button" id="btnCreateList" value="Create New List" />
+    </div>
 
     <table class="wishlistTable">
         <thead>
@@ -30,12 +39,15 @@
                 <td>$###.##</td>
             </tr>
         </tbody>
-        <tfoot class="wishlistFoot">
-            <tr>
-                <td class="subtotal" colspan="4"><span class="subtotalLabel">Subtotal: </span><span class="subtotalAmount">$###.##</span>
-                </td>
-            </tr>
+        <tfoot>
+          <tr colspan="4">
+              <td colspan="3" style="text-align:right">Subtotal: </td>
+              <td colspan="1">$##,###.##</td>
+          </tr>
         </tfoot>
     </table>
+    <div id="moreInfo">
+
+    </div>
 
 </asp:Content>
