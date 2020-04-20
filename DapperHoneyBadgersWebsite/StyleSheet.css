@@ -13,7 +13,6 @@
     background-color:#303030;
     background-size: cover;
     background-repeat: repeat;
-    height:1200px;
 }
 
 header{
@@ -56,6 +55,12 @@ nav li a {
 
 nav li a:hover{
     background-color:green;
+}
+
+h1 {
+    width:90%;
+    margin:0 auto;
+    text-align:center;
 }
 
 /* Index */
@@ -147,8 +152,7 @@ nav li a:hover{
 }
 
 table.infoTable {
-    border: 2px solid #2793bf
-      
+    border: 2px solid #2793bf;
     padding: 0;
     position: relative;
     color: #2593be;
