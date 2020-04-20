@@ -6,7 +6,7 @@
     <!-- Wishlist Item Layout -->
     
     <!--
-        Use jquery or something to make a popup when "float" over the screen when selected? 
+        Use jquery or something to make a popup "float" over the screen when selected? 
     -->
 
     <div class="btnBox">
