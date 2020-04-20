@@ -151,7 +151,7 @@ h1 {
     margin: 35px 0;
 }
 
-table.infoTable {
+table.infoTable, .orderTotal {
     border: 2px solid #2793bf;
     padding: 0;
     position: relative;
