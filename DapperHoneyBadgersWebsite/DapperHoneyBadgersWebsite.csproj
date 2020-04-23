@@ -71,6 +71,7 @@
     <Content Include="CartLayout.aspx" />
     <Content Include="images\_temp\_placeholder.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="ItemDetail.aspx" />
     <Content Include="OrderInfo.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="StyleSheet.css" />
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDetail.aspx.cs">
+      <DependentUpon>ItemDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemDetail.aspx.designer.cs">
+      <DependentUpon>ItemDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderInfo.aspx.cs">
       <DependentUpon>OrderInfo.aspx</DependentUpon>
