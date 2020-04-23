@@ -2,46 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="center">     
-        <table class="infoTable">
-            <tr>
-                <th><strong>Order ID</strong></th>
-                <th colspan="2"><strong>Order Details</strong></th>
-            </tr>   <!-- END Headings Row -->
-<!-- 
-    All order id in table have placeholder link incase we wanted to give a brief order description here and a more detailed of an individual order on a separate page. This HTML table is a place holder. Maybe a better to use DataTable in load event to create a dynamic data table and StringBuilder class to create html code for the table rather than have a hard coded HTML table. 
--->
-            <tr>
-                <td><a href="#">Insert OrderID</a></td>
-                <td colspan="2">Insert OrderDate, ProductID, etc here</td>
-            </tr>   <!-- END Data Row -->
-            <tr>
-                <td><a href="#">Insert OrderID</a></td>
-                <td colspan="2">Insert OrderDate, ProductID, etc here</td>
-            </tr>   <!-- END Data Row -->
-            <tr>
-                <td><a href="#">Insert OrderID</a></td>
-                <td colspan="2">Insert OrderDate, ProductID, etc here</td>
-            </tr>   <!-- END Data Row -->
-            <tr>
-                <td><a href="#">Insert OrderID</a></td>
-                <td colspan="2">Insert OrderDate, ProductID, etc here</td>
-            </tr>   <!-- END Data Row -->
-            <tr>
-                <td><a href="#">Insert OrderID</a></td>
-                <td colspan="2">Insert OrderDate, ProductID, etc here</td>
-            </tr>   <!-- END Data Row -->
-            <tfoot>
-               <!-- colspan="" creates a single row 3 columns wide for the button to be in -->
-                <tr colspan="3">
-                    <td colspan="3">        
-                        <button class="homeBTN">
-                            Return Home
-                        </button>
-                    </td>
-                </tr>
-            </tfoot>
+    <div class="center">
+        <h1>Order Information</h1>
+        <table class="infoTable" id="orderTable" runat="server">
+            
         </table>
+        <!-- Only sent to the client when an order has been selected, to show the total and a return button. -->
+        <div id="orderTotal" runat="server">
+            <h1>Total: <span id="orderTotalValue" runat="server"></span></h1>
+            <asp:Button runat="server" Text="Return" OnClick="BtnReturn_Click" CssClass="center" Height="30px" />
+        </div>
     </div>  <!-- END div center1 -->
-
 </asp:Content>

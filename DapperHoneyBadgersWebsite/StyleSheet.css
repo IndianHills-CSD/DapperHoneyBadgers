@@ -57,6 +57,12 @@ nav li a:hover{
     background-color:green;
 }
 
+h1 {
+    width:90%;
+    margin:0 auto;
+    text-align:center;
+}
+
 /* ------------------------------ Index ------------------------------ */
 
 .greenBorder{
@@ -145,7 +151,7 @@ nav li a:hover{
     margin: 35px 0;
 }
 
-table.infoTable {
+table.infoTable, .orderTotal {
     border: 2px solid #2793bf;
     padding: 0;
     position: relative;
@@ -205,13 +211,13 @@ table.cartTable {
     width: 80%;
 }
 
-thead.cartHead {
+.cartHead {
     color: #2793bf;
     text-align: left;
     font-size: 22px;
 }
 
-tfoot.cartFoot {
+.cartFoot {
     color: #2793bf;
     text-align: right;
 }
