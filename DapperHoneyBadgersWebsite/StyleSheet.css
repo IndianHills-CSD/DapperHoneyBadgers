@@ -263,3 +263,14 @@ table tr td:first-child {
 table tr td:last-child {
     border-right: 0;
 }
+/*Products*/
+.searchcon {
+    border: 3px solid green;
+    float: left;
+    
+}
+.accordion{
+    overflow:auto;
+}
+
+
