@@ -81,7 +81,7 @@ namespace DapperHoneyBadgersWebsite
             this.Qty = ID;
         }
 
-        // Does not necessarily need to be done in the item class itself, but having it here simplies the process.
+        // Should not be done here, done for pure simple testing's sake.
         public void AppendToRow( HtmlTableRow row )
         {
             // ID, to be clicked. Redirect to the OrderItems page with the id set.

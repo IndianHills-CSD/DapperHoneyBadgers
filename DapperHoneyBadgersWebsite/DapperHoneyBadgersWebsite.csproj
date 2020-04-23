@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Account.aspx" />
     <Content Include="CartLayout.aspx" />
+    <Content Include="images\_temp\_placeholder.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="OrderInfo.aspx" />
     <Content Include="Products.aspx" />
@@ -100,7 +101,6 @@
     </Compile>
     <Compile Include="OrderInfo.aspx.cs">
       <DependentUpon>OrderInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="OrderInfo.aspx.designer.cs">
       <DependentUpon>OrderInfo.aspx</DependentUpon>

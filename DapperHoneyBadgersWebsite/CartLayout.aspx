@@ -4,10 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 <!-- Dapper Honey Badgers Online Store Car Layout -->
-    <table class="cartTable">
+    <table class="cartTable" id="cartItemsTable" runat="server">
         <thead class="cartHead">
             <tr>
-                <th colspan="4"  class="tableHeadText"><h4># Item(s) in your shopping cart: $###.##</h4></th>
+                <th colspan="4"  class="tableHeadText"><h4><span id="cartTotalCount" runat="server">#</span> Item(s) in your shopping cart</h4></th>
             </tr>
         </thead>
         <tbody class="cartBody">
