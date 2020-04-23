@@ -269,7 +269,7 @@ table tr td:last-child {
 }
 
 /* Top Buttons */
-#btnWishlists {
+.btnWishlists {
     margin-top: 4px;
     float: left;
     margin-left: 100px;
@@ -282,7 +282,7 @@ table tr td:last-child {
     background-color: #303030;
 }
 
-#btnCreateList {
+.btnCreateList {
     margin-top: 4px;
     float: right;
     margin-right: 100px;
@@ -347,23 +347,68 @@ table tr td:last-child {
 }
 
 /*  ---------------------------- Item Details Page ---------------------------- */
-#itemInfo {
-    width: 960px;
+#item {
+    min-height: 500px;
+    position: relative;
+    border: 5px solid yellow;
     padding: 40px;
 }
 
-#picBox {
-    border: 1px solid #2793bf;
-    width: 450px;
-    height: 410px;
-    float: left;
-    margin-bottom: 40px;
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
 }
 
 #itemName {
-    float: right;
-    width: 47%;
-    margin-right: 45px;
-    padding-top: 37px;
     font-weight: bold;
-} 
+    font-size: 20px;
+    text-align: left;
+}
+
+.itemPrice {
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.qtyForm {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.qtyForm label {
+    margin: 5px 10px 5px 0;
+}
+
+.qtyForm input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid red;
+}
+
+.qtyRow > button {
+    width: 125px;
+    margin: 10px 0;
+    border: 1px solid green;
+    border-radius: 7%;
+    background-color: #303030;
+    font-family: 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    font-size: 15px;
+    box-shadow: 1px 2px 3px green;
+}
+
+.qtyRow {
+    float: right;
+}
+
+.prodDetails {
+    clear: both;
+}
+
+
