@@ -17,11 +17,13 @@ namespace DapperHoneyBadgersWebsite
             {
                 AccountCreationAndLogin.Visible = true;
                 AccountStatus.Visible = false;
+                HttpContext.Current.Session["CurrentAccount"] = new object();
             }
             else
             {
                 AccountCreationAndLogin.Visible = false;
                 AccountStatus.Visible = true;
+                HttpContext.Current.Session.Remove( "CurrentAccount" );
             }
         }
     }
