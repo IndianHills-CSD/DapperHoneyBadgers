@@ -61,6 +61,12 @@ nav li a:hover{
     background-color:green;
 }
 
+h1 {
+    width:90%;
+    margin:0 auto;
+    text-align:center;
+}
+
 /* ------------------------------ Index ------------------------------ */
 
 .greenBorder{
@@ -149,7 +155,7 @@ nav li a:hover{
     margin: 35px 0;
 }
 
-table.infoTable {
+table.infoTable, .orderTotal {
     border: 2px solid #2793bf;
     padding: 0;
     position: relative;
@@ -209,13 +215,13 @@ table.cartTable {
     width: 80%;
 }
 
-thead.cartHead {
+.cartHead {
     color: #2793bf;
     text-align: left;
     font-size: 22px;
 }
 
-tfoot.cartFoot {
+.cartFoot {
     color: #2793bf;
     text-align: right;
 }
@@ -267,6 +273,19 @@ table tr td:first-child {
 table tr td:last-child {
     border-right: 0;
 }
+
+/*Products*/
+.searchcon {
+    border: 3px solid green;
+    float: left;
+    
+}
+.accordion{
+    overflow:auto;
+}
+
+
+
 
 /* Top Buttons */
 .btnWishlists {
@@ -426,3 +445,4 @@ hr {
     text-align: justify;
     margin: 20px 20px 0 20px;
 }
+
