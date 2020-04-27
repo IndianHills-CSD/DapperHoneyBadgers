@@ -10,8 +10,8 @@
     -->
 
     <div class="btnBox">
-        <input type="button" id="btnWishlists" value="My Wishlists" />
-        <input type="button" id="btnCreateList" value="Create New List" />
+        <input type="button" class="btnWishlists" value="My Wishlists" />
+        <input type="button" class="btnCreateList" value="Create New List" />
     </div>
 
     <table class="wishlistTable">
