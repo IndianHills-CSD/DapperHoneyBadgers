@@ -259,10 +259,13 @@ td.grandTotal {
     padding: 5px 10px 5px 5px;
 }
 
-/* ------------------------------ Wishlist Styling ------------------------------ */
+/* ------------------- Wishlist Styling --------------------------- */
 table.wishlistTable {
-    background-color: white;
+    background-color: #303030;
     clear: both;
+    margin: 45px;
+    border: 2px solid #2793bf;
+    border-collapse: separate;
 }
 
 table tr td:first-child {
@@ -283,9 +286,6 @@ table tr td:last-child {
 .accordion{
     overflow:auto;
 }
-
-
-
 
 /* Top Buttons */
 .btnWishlists {
@@ -315,17 +315,35 @@ table tr td:last-child {
 }
 
 .btnBox {
-    background-color: white;
+    background-color: #303030;
     height: 30px;
+    margin: 15px 0;
+}
+
+.img {
+    padding: 10px;
+}
+
+.specs {
+    padding: 50px;
+}
+
+.price {
+    padding-right: 10px;
+}
+
+.wishlistSub {
+    text-align: end;
+    padding: 10px;
 }
 
 
 /*  ------------------------------ Product Page ------------------------------ */
 .grid {
-    background-color: white;
+    background-color: #303030;
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 70px;
+    grid-gap: 25px;
     padding: 10px;
 }
 
@@ -346,7 +364,7 @@ table tr td:last-child {
     font-size: .85em;
     font-weight: bold;
     display: block;
-    color: #595b64;
+    color: #2793bf;
 }
 
 .meta__title {
@@ -362,7 +380,7 @@ table tr td:last-child {
     position: absolute;
     top: .45em;
     right: .25em;
-    color: #595b64;
+    color: red;
 }
 
 /*  ---------------------------- Item Details Page ---------------------------- */
