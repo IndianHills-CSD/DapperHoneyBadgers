@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,10 +76,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account.aspx" />
+    <Content Include="BadgerDatabaseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BadgerDatabaseModel.Context.cs</LastGenOutput>
+      <DependentUpon>BadgerDatabaseModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="BadgerDatabaseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BadgerDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>BadgerDatabaseModel.cs</LastGenOutput>
+    </Content>
     <Content Include="CartLayout.aspx" />
     <Content Include="images\_temp\_placeholder.jpg" />
     <Content Include="Index.aspx" />
-    <Content Include="ItemDetail.aspx" />
     <Content Include="OrderInfo.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="StyleSheet.css" />
@@ -86,6 +103,24 @@
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AccountEnt.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BadgerDatabaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BadgerDatabaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BadgerDatabaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BadgerDatabaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BadgerDatabaseModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="CartLayout.aspx.cs">
       <DependentUpon>CartLayout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,13 +134,6 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ItemDetail.aspx.cs">
-      <DependentUpon>ItemDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ItemDetail.aspx.designer.cs">
-      <DependentUpon>ItemDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderInfo.aspx.cs">
       <DependentUpon>OrderInfo.aspx</DependentUpon>
@@ -137,6 +165,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="BadgerDatabaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BadgerDatabaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="BadgerDatabaseModel.edmx.diagram">
+      <DependentUpon>BadgerDatabaseModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
@@ -145,6 +180,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

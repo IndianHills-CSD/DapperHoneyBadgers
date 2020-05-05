@@ -130,23 +130,39 @@ h1 {
     overflow:auto;
 }
 
-.floatLeftTwoColumn{
-    float:left;
-    clear:left;
-    margin-left:10%;
-    padding:5px;
+.floatLeftTwoColumn {
+    float: left;
+    clear: left;
+    margin-right: 4%;
+    margin-left: 4%;
+    padding: 1%;
+    width: 40%;
 }
 
 .floatRightTwoColumn{
     float:right;
     clear:right;
-    margin-right:10%;
-    padding:5px;
+    margin-right:4%;
+    margin-left:4%;
+    padding:1%;
+    width:40%;
 }
 
 .label{
     width:80px;
     display:inline-block;
+}
+
+.accountResponse{
+    width:100%;
+}
+
+.accountResponse h2{
+    display:block;
+    width:80%;
+    margin:0 auto;
+    text-align:center;
+    border-bottom:2px groove green;
 }
 
 /* ------------------------------ Order Info Styling ------------------------------ */
