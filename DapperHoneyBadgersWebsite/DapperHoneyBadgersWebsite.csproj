@@ -87,7 +87,6 @@
       <LastGenOutput>BadgerDatabaseModel.cs</LastGenOutput>
     </Content>
     <Content Include="CartLayout.aspx" />
-    <Content Include="images\_temp\_placeholder.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="OrderInfo.aspx" />
     <Content Include="Products.aspx" />
