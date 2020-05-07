@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="Account.aspx" />
     <Content Include="CartLayout.aspx" />
-    <Content Include="images\_temp\_placeholder.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="ItemDetail.aspx" />
     <Content Include="OrderInfo.aspx" />
