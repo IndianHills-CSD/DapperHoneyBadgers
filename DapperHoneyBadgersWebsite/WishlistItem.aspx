@@ -8,20 +8,7 @@
 
     <!-- Wishlist Item Layout -->
 
-    <div class="center">
-        <h1>Wishlist Information</h1>
-        <asp:Button runat="server" Text="My Wishlists" OnClick="BtnWishlists_Click" CssClass="btnWishlists" />
-        <asp:Button runat="server" Text="Create New List" OnClick="BtnCreateList_Click" CssClass="btnCreateList"/>
-        <table class="wishlistTable" id="wlTable" runat="server">
-
-        </table>
-        
-        <div id="wlTotal" runat="server">
-            <h1>Total: <span id="wlTotalValue" runat="server"></span></h1>
-
-        </div>
-        
-    </div>
+    
 
 
 <!--  Placeholder markup  
