@@ -13,32 +13,5 @@ namespace DapperHoneyBadgersWebsite
 
     public partial class WishlistItem
     {
-
-        /// <summary>
-        /// wlTable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable wlTable;
-
-        /// <summary>
-        /// wlTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wlTotal;
-
-        /// <summary>
-        /// wlTotalValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wlTotalValue;
     }
 }
