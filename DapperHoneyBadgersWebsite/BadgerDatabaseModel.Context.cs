@@ -26,5 +26,8 @@ namespace DapperHoneyBadgersWebsite
         }
     
         public virtual DbSet<AccountEnt> AccountEnts { get; set; }
+        public virtual DbSet<OrderItemEnt> OrderItemEnts { get; set; }
+        public virtual DbSet<OrderEnt> OrderEnts { get; set; }
+        public virtual DbSet<ProductEnt> ProductEnts { get; set; }
     }
 }
