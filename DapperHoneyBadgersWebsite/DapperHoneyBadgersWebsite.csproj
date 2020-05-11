@@ -88,6 +88,7 @@
     </Content>
     <Content Include="CartLayout.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="ItemDetail.aspx" />
     <Content Include="OrderInfo.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="StyleSheet.css" />
@@ -134,11 +135,28 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ItemDetail.aspx.cs">
+      <DependentUpon>ItemDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemDetail.aspx.designer.cs">
+      <DependentUpon>ItemDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderEnt.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="OrderInfo.aspx.cs">
       <DependentUpon>OrderInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="OrderInfo.aspx.designer.cs">
       <DependentUpon>OrderInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItemEnt.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductEnt.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>

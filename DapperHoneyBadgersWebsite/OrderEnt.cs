@@ -12,20 +12,21 @@ namespace DapperHoneyBadgersWebsite
     using System;
     using System.Collections.Generic;
     
-    public partial class AccountEnt
+    public partial class OrderEnt
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AccountEnt()
+        public OrderEnt()
         {
-            this.Orders = new HashSet<OrderEnt>();
+            this.OrderItems = new HashSet<OrderItemEnt>();
         }
     
+        public int OrderID { get; set; }
         public string Username { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
+        public string OrderAddress { get; set; }
+        public System.DateTime OrderDate { get; set; }
     
+        public virtual AccountEnt Account { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderEnt> Orders { get; set; }
+        public virtual ICollection<OrderItemEnt> OrderItems { get; set; }
     }
 }

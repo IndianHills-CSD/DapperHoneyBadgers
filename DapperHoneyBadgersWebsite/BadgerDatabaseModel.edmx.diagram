@@ -6,6 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="46dd4985ca964204b64e8860cb671c87" Name="Diagram1">
         <EntityTypeShape EntityType="BadgerDatabaseModel.AccountEnt" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.OrderItemEnt" Width="1.5" PointX="6.875" PointY="1.75" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.OrderEnt" Width="1.5" PointX="3.75" PointY="1.375" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK_Orders_To_Accounts" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK_OrderItems_ToOrders" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.ProductEnt" Width="1.5" PointX="10" PointY="1.75" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK_OrderItems_ToProducts" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

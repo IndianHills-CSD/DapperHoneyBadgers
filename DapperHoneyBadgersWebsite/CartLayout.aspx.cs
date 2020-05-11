@@ -12,18 +12,8 @@ namespace DapperHoneyBadgersWebsite
     {
         protected void Page_Load( object sender, EventArgs e )
         {
-            #region TEMP TEST - DELETE AFTER DATABASE
-            // Add some fake items to our cart.
-            if ( HttpContext.Current.Session["Cart"] == null )
-            {
-                HttpContext.Current.Session.Add( "Cart", new List<TempItem>() );
-                for ( int x = 1; x < 4; x++ )
-                    (HttpContext.Current.Session["Cart"] as List<TempItem>).Add( new TempItem( 1 + x * 2 ) );
-            }
-            #endregion
-
             // Display items from our cart.
-            List<TempItem> Cart = HttpContext.Current.Session["Cart"] as List<TempItem>;
+            List<OrderItemEnt> Cart = HttpContext.Current.Session["Cart"] as List<OrderItemEnt>;
             cartItemsTable.Controls.Clear();
             if ( Cart == null )
             {
@@ -46,7 +36,7 @@ namespace DapperHoneyBadgersWebsite
                 List<HtmlTableRow> rows = new List<HtmlTableRow>();
                 // Keep track of the total counts and price.
                 int totalItems = 0, totalQty = 0;
-                double totalPrice = 0.0;
+                decimal totalPrice = 0;
                 for ( int x = 0; x < Cart.Count; x++ )
                 {
                     // Setup row.
@@ -63,7 +53,7 @@ namespace DapperHoneyBadgersWebsite
                     // Setup name cell.
                     HtmlTableCell nameCell = new HtmlTableCell();
                     Button name = new Button();
-                    name.ID = Cart[x].ID;
+                    name.ID = Cart[x].Product.ProductName;
                     name.Text = "Item Name Goes Here"; // Should be replaced with the item's name.
                     name.BackColor = System.Drawing.Color.Transparent;
                     name.Click += new EventHandler( delegate ( object s, EventArgs ee )
@@ -78,12 +68,12 @@ namespace DapperHoneyBadgersWebsite
                     HtmlInputText qty = new HtmlInputText( "number" );
                     qty.Attributes.Add( "class", "qtyInput" );
                     qty.Attributes.Add( "value", Cart[x].Qty.ToString() );
-                    qty.ID = "qty" + Cart[x].ID;
+                    qty.ID = "qty" + Cart[x].Qty;
                     qtyCell.Controls.Add( qty );
 
                     // Setup price.
                     HtmlTableCell totCell = new HtmlTableCell();
-                    totCell.InnerHtml = Cart[x].TotalPrice.ToString( "c" );
+                    totCell.InnerHtml = (Cart[x].Product.ProductPrice * Cart[x].Qty).ToString( "c" );
 
                     itemRow.Controls.Add( imgCell );
                     itemRow.Controls.Add( nameCell );
@@ -93,7 +83,7 @@ namespace DapperHoneyBadgersWebsite
                     rows.Add( itemRow );
                     totalItems++;
                     totalQty += Cart[x].Qty;
-                    totalPrice += Cart[x].TotalPrice;
+                    totalPrice += Cart[x].Product.ProductPrice * Cart[x].Qty;
                 }
 
                 // List all our info.

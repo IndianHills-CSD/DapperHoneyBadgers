@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BadgerDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BadgerDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accounts">
           <Key>
             <PropertyRef Name="Username" />
@@ -14,11 +14,89 @@
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="OrderItems">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="OrderAddress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CategoryID" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="ProductPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ProductQty" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_OrderItems_ToOrders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_ToProducts">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_To_Accounts">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BadgerDatabaseModelStoreContainer">
           <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_OrderItems_ToOrders" Association="Self.FK_OrderItems_ToOrders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_ToProducts" Association="Self.FK_OrderItems_ToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_To_Accounts" Association="Self.FK_Orders_To_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BadgerDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -30,10 +108,95 @@
           <Property Name="Password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="BadgerDatabaseModel.FK_Orders_To_Accounts" FromRole="AccountEnt" ToRole="Order" />
         </EntityType>
         <EntityContainer Name="BadgerDatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AccountEnts" EntityType="BadgerDatabaseModel.AccountEnt" />
+          <EntitySet Name="OrderItemEnts" EntityType="BadgerDatabaseModel.OrderItemEnt" />
+          <EntitySet Name="OrderEnts" EntityType="BadgerDatabaseModel.OrderEnt" />
+          <AssociationSet Name="FK_Orders_To_Accounts" Association="BadgerDatabaseModel.FK_Orders_To_Accounts">
+            <End Role="AccountEnt" EntitySet="AccountEnts" />
+            <End Role="Order" EntitySet="OrderEnts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_ToOrders" Association="BadgerDatabaseModel.FK_OrderItems_ToOrders">
+            <End Role="Order" EntitySet="OrderEnts" />
+            <End Role="OrderItem" EntitySet="OrderItemEnts" />
+          </AssociationSet>
+          <EntitySet Name="ProductEnts" EntityType="BadgerDatabaseModel.ProductEnt" />
+          <AssociationSet Name="FK_OrderItems_ToProducts" Association="BadgerDatabaseModel.FK_OrderItems_ToProducts">
+            <End Role="Product" EntitySet="ProductEnts" />
+            <End Role="OrderItemEnt" EntitySet="OrderItemEnts" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="OrderItemEnt">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="BadgerDatabaseModel.FK_OrderItems_ToOrders" FromRole="OrderItem" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK_OrderItems_ToProducts" FromRole="OrderItemEnt" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="OrderEnt">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="OrderAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Account" Relationship="BadgerDatabaseModel.FK_Orders_To_Accounts" FromRole="Order" ToRole="AccountEnt" />
+          <NavigationProperty Name="OrderItems" Relationship="BadgerDatabaseModel.FK_OrderItems_ToOrders" FromRole="Order" ToRole="OrderItem" />
+        </EntityType>
+        <Association Name="FK_Orders_To_Accounts">
+          <End Type="BadgerDatabaseModel.AccountEnt" Role="AccountEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.OrderEnt" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountEnt">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_ToOrders">
+          <End Type="BadgerDatabaseModel.OrderEnt" Role="Order" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.OrderItemEnt" Role="OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ProductEnt">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ProductPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ProductQty" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrderItems" Relationship="BadgerDatabaseModel.FK_OrderItems_ToProducts" FromRole="Product" ToRole="OrderItemEnt" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_OrderItems_ToProducts">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="Product" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.OrderItemEnt" Role="OrderItemEnt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderItemEnt">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -47,6 +210,36 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderItemEnts">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.OrderItemEnt">
+              <MappingFragment StoreEntitySet="OrderItems">
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderEnts">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.OrderEnt">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderAddress" ColumnName="OrderAddress" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductEnts">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.ProductEnt">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
