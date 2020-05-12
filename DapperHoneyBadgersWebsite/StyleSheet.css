@@ -482,4 +482,12 @@ hr {
     text-align: justify;
     margin: 20px 20px 0 20px;
 }
+/*search box styles*/
+.accordion a {
+    border: solid;
+}
 
+.link-border {
+    border: solid;
+    color: red;
+}
