@@ -14,6 +14,13 @@
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
         <EntityType Name="OrderItems">
           <Key>
             <PropertyRef Name="OrderID" />
@@ -32,6 +39,128 @@
           <Property Name="OrderAddress" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="OrderDate" Type="date" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BadgerDatabase.dbo.ProductCase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductCase">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="Size" />
+            <PropertyRef Name="RGB" />
+            <PropertyRef Name="Material" />
+          </Key>
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ModelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Size" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="RGB" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Material" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BadgerDatabase.dbo.ProductCPU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductCPU">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="Cores" />
+            <PropertyRef Name="Architecture" />
+            <PropertyRef Name="Integratedgpu" />
+            <PropertyRef Name="Speed" />
+            <PropertyRef Name="SocketType" />
+          </Key>
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ModelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cores" Type="int" Nullable="false" />
+          <Property Name="Architecture" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Integratedgpu" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Speed" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+          <Property Name="SocketType" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BadgerDatabase.dbo.ProductGPU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductGPU">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="VRAM" />
+            <PropertyRef Name="SLICompatible" />
+            <PropertyRef Name="Size" />
+            <PropertyRef Name="CoreClock" />
+          </Key>
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ModelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VRAM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SLICompatible" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Size" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="CoreClock" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BadgerDatabase.dbo.ProductHardDrive' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductHardDrive">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="External" />
+            <PropertyRef Name="SSD" />
+            <PropertyRef Name="Capacity" />
+          </Key>
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ModelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="External" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="SSD" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Capacity" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BadgerDatabase.dbo.ProductMotherboard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductMotherboard">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="SocketType" />
+            <PropertyRef Name="RamSlots" />
+            <PropertyRef Name="M2Compatible" />
+            <PropertyRef Name="SataVersion" />
+            <PropertyRef Name="USBVersion" />
+            <PropertyRef Name="Chipset" />
+          </Key>
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ModelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SocketType" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="RamSlots" Type="int" Nullable="false" />
+          <Property Name="M2Compatible" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="SataVersion" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="USBVersion" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Chipset" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BadgerDatabase.dbo.ProductPowerSupply' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductPowerSupply">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="MaxPower" />
+          </Key>
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ModelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaxPower" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BadgerDatabase.dbo.ProductRam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductRam">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="NumOfSticks" />
+            <PropertyRef Name="Voltage" />
+            <PropertyRef Name="Speed" />
+            <PropertyRef Name="Timing" />
+          </Key>
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ModelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NumOfSticks" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Voltage" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Speed" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Timing" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -40,8 +169,150 @@
           <Property Name="CategoryID" Type="varchar" MaxLength="2" Nullable="false" />
           <Property Name="ProductPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ProductQty" Type="int" Nullable="false" />
-          <Property Name="ProductName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Wishlist">
+          <Key>
+            <PropertyRef Name="WishlistID" />
+          </Key>
+          <Property Name="WishlistID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ProductID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="DateWishlisted" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__ProductCa__Produ__6383C8BA">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductCase" Type="Self.ProductCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductCase">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductCP__Produ__656C112C">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductCPU" Type="Self.ProductCPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductCPU">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductGP__Produ__5EBF139D">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductGPU" Type="Self.ProductGPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductGPU">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductHa__Produ__619B8048">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductHardDrive" Type="Self.ProductHardDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductHardDrive">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductMo__Produ__6754599E">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductMotherboard" Type="Self.ProductMotherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductMotherboard">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductPo__Produ__5FB337D6">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductPowerSupply" Type="Self.ProductPowerSupply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductPowerSupply">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductRa__Produ__693CA210">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductRam" Type="Self.ProductRam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductRam">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products__Catego__4AB81AF0">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products__Catego__778AC167">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Wishlist__Produc__4E88ABD4">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="Wishlist" Type="Self.Wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Wishlist">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Wishlist__Userna__4D94879B">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="Wishlist" Type="Self.Wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Wishlist">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OrderItems_ToOrders">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
           <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
@@ -80,9 +351,123 @@
         </Association>
         <EntityContainer Name="BadgerDatabaseModelStoreContainer">
           <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wishlist" EntityType="Self.Wishlist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCase" EntityType="Self.ProductCase" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductCase].[ProductID] AS [ProductID], 
+    [ProductCase].[ModelName] AS [ModelName], 
+    [ProductCase].[Size] AS [Size], 
+    [ProductCase].[RGB] AS [RGB], 
+    [ProductCase].[Material] AS [Material]
+    FROM [dbo].[ProductCase] AS [ProductCase]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductCPU" EntityType="Self.ProductCPU" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductCPU].[ProductID] AS [ProductID], 
+    [ProductCPU].[ModelName] AS [ModelName], 
+    [ProductCPU].[Cores] AS [Cores], 
+    [ProductCPU].[Architecture] AS [Architecture], 
+    [ProductCPU].[Integratedgpu] AS [Integratedgpu], 
+    [ProductCPU].[Speed] AS [Speed], 
+    [ProductCPU].[SocketType] AS [SocketType]
+    FROM [dbo].[ProductCPU] AS [ProductCPU]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductGPU" EntityType="Self.ProductGPU" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductGPU].[ProductID] AS [ProductID], 
+    [ProductGPU].[ModelName] AS [ModelName], 
+    [ProductGPU].[VRAM] AS [VRAM], 
+    [ProductGPU].[SLICompatible] AS [SLICompatible], 
+    [ProductGPU].[Size] AS [Size], 
+    [ProductGPU].[CoreClock] AS [CoreClock]
+    FROM [dbo].[ProductGPU] AS [ProductGPU]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductHardDrive" EntityType="Self.ProductHardDrive" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductHardDrive].[ProductID] AS [ProductID], 
+    [ProductHardDrive].[ModelName] AS [ModelName], 
+    [ProductHardDrive].[External] AS [External], 
+    [ProductHardDrive].[SSD] AS [SSD], 
+    [ProductHardDrive].[Capacity] AS [Capacity]
+    FROM [dbo].[ProductHardDrive] AS [ProductHardDrive]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductMotherboard" EntityType="Self.ProductMotherboard" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductMotherboard].[ProductID] AS [ProductID], 
+    [ProductMotherboard].[ModelName] AS [ModelName], 
+    [ProductMotherboard].[SocketType] AS [SocketType], 
+    [ProductMotherboard].[RamSlots] AS [RamSlots], 
+    [ProductMotherboard].[M2Compatible] AS [M2Compatible], 
+    [ProductMotherboard].[SataVersion] AS [SataVersion], 
+    [ProductMotherboard].[USBVersion] AS [USBVersion], 
+    [ProductMotherboard].[Chipset] AS [Chipset]
+    FROM [dbo].[ProductMotherboard] AS [ProductMotherboard]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductPowerSupply" EntityType="Self.ProductPowerSupply" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductPowerSupply].[ProductID] AS [ProductID], 
+    [ProductPowerSupply].[ModelName] AS [ModelName], 
+    [ProductPowerSupply].[MaxPower] AS [MaxPower]
+    FROM [dbo].[ProductPowerSupply] AS [ProductPowerSupply]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductRam" EntityType="Self.ProductRam" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductRam].[ProductID] AS [ProductID], 
+    [ProductRam].[ModelName] AS [ModelName], 
+    [ProductRam].[NumOfSticks] AS [NumOfSticks], 
+    [ProductRam].[Voltage] AS [Voltage], 
+    [ProductRam].[Speed] AS [Speed], 
+    [ProductRam].[Timing] AS [Timing]
+    FROM [dbo].[ProductRam] AS [ProductRam]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__ProductCa__Produ__6383C8BA" Association="Self.FK__ProductCa__Produ__6383C8BA">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductCase" EntitySet="ProductCase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductCP__Produ__656C112C" Association="Self.FK__ProductCP__Produ__656C112C">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductCPU" EntitySet="ProductCPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductGP__Produ__5EBF139D" Association="Self.FK__ProductGP__Produ__5EBF139D">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductGPU" EntitySet="ProductGPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductHa__Produ__619B8048" Association="Self.FK__ProductHa__Produ__619B8048">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductHardDrive" EntitySet="ProductHardDrive" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductMo__Produ__6754599E" Association="Self.FK__ProductMo__Produ__6754599E">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductMotherboard" EntitySet="ProductMotherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductPo__Produ__5FB337D6" Association="Self.FK__ProductPo__Produ__5FB337D6">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductPowerSupply" EntitySet="ProductPowerSupply" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductRa__Produ__693CA210" Association="Self.FK__ProductRa__Produ__693CA210">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductRam" EntitySet="ProductRam" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products__Catego__4AB81AF0" Association="Self.FK__Products__Catego__4AB81AF0">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products__Catego__778AC167" Association="Self.FK__Products__Catego__778AC167">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Wishlist__Produc__4E88ABD4" Association="Self.FK__Wishlist__Produc__4E88ABD4">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Wishlist" EntitySet="Wishlist" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Wishlist__Userna__4D94879B" Association="Self.FK__Wishlist__Userna__4D94879B">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Wishlist" EntitySet="Wishlist" />
+          </AssociationSet>
           <AssociationSet Name="FK_OrderItems_ToOrders" Association="Self.FK_OrderItems_ToOrders">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderItems" EntitySet="OrderItems" />
@@ -109,6 +494,7 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="BadgerDatabaseModel.FK_Orders_To_Accounts" FromRole="AccountEnt" ToRole="Order" />
+          <NavigationProperty Name="Wishlists" Relationship="BadgerDatabaseModel.FK__Wishlist__Userna__4D94879B" FromRole="AccountEnt" ToRole="Wishlist" />
         </EntityType>
         <EntityContainer Name="BadgerDatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AccountEnts" EntityType="BadgerDatabaseModel.AccountEnt" />
@@ -126,6 +512,59 @@
           <AssociationSet Name="FK_OrderItems_ToProducts" Association="BadgerDatabaseModel.FK_OrderItems_ToProducts">
             <End Role="Product" EntitySet="ProductEnts" />
             <End Role="OrderItemEnt" EntitySet="OrderItemEnts" />
+          </AssociationSet>
+          <EntitySet Name="Categories" EntityType="BadgerDatabaseModel.Category" />
+          <EntitySet Name="Wishlists" EntityType="BadgerDatabaseModel.Wishlist" />
+          <EntitySet Name="ProductCases" EntityType="BadgerDatabaseModel.ProductCase" />
+          <EntitySet Name="ProductCPUs" EntityType="BadgerDatabaseModel.ProductCPU" />
+          <EntitySet Name="ProductGPUs" EntityType="BadgerDatabaseModel.ProductGPU" />
+          <EntitySet Name="ProductHardDrives" EntityType="BadgerDatabaseModel.ProductHardDrive" />
+          <EntitySet Name="ProductMotherboards" EntityType="BadgerDatabaseModel.ProductMotherboard" />
+          <EntitySet Name="ProductPowerSupplies" EntityType="BadgerDatabaseModel.ProductPowerSupply" />
+          <EntitySet Name="ProductRams" EntityType="BadgerDatabaseModel.ProductRam" />
+          <AssociationSet Name="FK__Wishlist__Userna__4D94879B" Association="BadgerDatabaseModel.FK__Wishlist__Userna__4D94879B">
+            <End Role="AccountEnt" EntitySet="AccountEnts" />
+            <End Role="Wishlist" EntitySet="Wishlists" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products__Catego__4AB81AF0" Association="BadgerDatabaseModel.FK__Products__Catego__4AB81AF0">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products__Catego__778AC167" Association="BadgerDatabaseModel.FK__Products__Catego__778AC167">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductCa__Produ__6383C8BA" Association="BadgerDatabaseModel.FK__ProductCa__Produ__6383C8BA">
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+            <End Role="ProductCase" EntitySet="ProductCases" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductCP__Produ__656C112C" Association="BadgerDatabaseModel.FK__ProductCP__Produ__656C112C">
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+            <End Role="ProductCPU" EntitySet="ProductCPUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductGP__Produ__5EBF139D" Association="BadgerDatabaseModel.FK__ProductGP__Produ__5EBF139D">
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+            <End Role="ProductGPU" EntitySet="ProductGPUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductHa__Produ__619B8048" Association="BadgerDatabaseModel.FK__ProductHa__Produ__619B8048">
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+            <End Role="ProductHardDrive" EntitySet="ProductHardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductMo__Produ__6754599E" Association="BadgerDatabaseModel.FK__ProductMo__Produ__6754599E">
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+            <End Role="ProductMotherboard" EntitySet="ProductMotherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductPo__Produ__5FB337D6" Association="BadgerDatabaseModel.FK__ProductPo__Produ__5FB337D6">
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+            <End Role="ProductPowerSupply" EntitySet="ProductPowerSupplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductRa__Produ__693CA210" Association="BadgerDatabaseModel.FK__ProductRa__Produ__693CA210">
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+            <End Role="ProductRam" EntitySet="ProductRams" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Wishlist__Produc__4E88ABD4" Association="BadgerDatabaseModel.FK__Wishlist__Produc__4E88ABD4">
+            <End Role="ProductEnt" EntitySet="ProductEnts" />
+            <End Role="Wishlist" EntitySet="Wishlists" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="OrderItemEnt">
@@ -183,7 +622,17 @@
           <Property Name="ProductPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="ProductQty" Type="Int32" Nullable="false" />
           <NavigationProperty Name="OrderItems" Relationship="BadgerDatabaseModel.FK_OrderItems_ToProducts" FromRole="Product" ToRole="OrderItemEnt" />
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Category" Relationship="BadgerDatabaseModel.FK__Products__Catego__4AB81AF0" FromRole="ProductEnt" ToRole="Category" />
+          <NavigationProperty Name="Category1" Relationship="BadgerDatabaseModel.FK__Products__Catego__778AC167" FromRole="ProductEnt" ToRole="Category" />
+          <NavigationProperty Name="ProductCases" Relationship="BadgerDatabaseModel.FK__ProductCa__Produ__6383C8BA" FromRole="ProductEnt" ToRole="ProductCase" />
+          <NavigationProperty Name="ProductCPUs" Relationship="BadgerDatabaseModel.FK__ProductCP__Produ__656C112C" FromRole="ProductEnt" ToRole="ProductCPU" />
+          <NavigationProperty Name="ProductGPUs" Relationship="BadgerDatabaseModel.FK__ProductGP__Produ__5EBF139D" FromRole="ProductEnt" ToRole="ProductGPU" />
+          <NavigationProperty Name="ProductHardDrives" Relationship="BadgerDatabaseModel.FK__ProductHa__Produ__619B8048" FromRole="ProductEnt" ToRole="ProductHardDrive" />
+          <NavigationProperty Name="ProductMotherboards" Relationship="BadgerDatabaseModel.FK__ProductMo__Produ__6754599E" FromRole="ProductEnt" ToRole="ProductMotherboard" />
+          <NavigationProperty Name="ProductPowerSupplies" Relationship="BadgerDatabaseModel.FK__ProductPo__Produ__5FB337D6" FromRole="ProductEnt" ToRole="ProductPowerSupply" />
+          <NavigationProperty Name="ProductRams" Relationship="BadgerDatabaseModel.FK__ProductRa__Produ__693CA210" FromRole="ProductEnt" ToRole="ProductRam" />
+          <NavigationProperty Name="Wishlists" Relationship="BadgerDatabaseModel.FK__Wishlist__Produc__4E88ABD4" FromRole="ProductEnt" ToRole="Wishlist" />
         </EntityType>
         <Association Name="FK_OrderItems_ToProducts">
           <End Type="BadgerDatabaseModel.ProductEnt" Role="Product" Multiplicity="1" />
@@ -193,6 +642,274 @@
               <PropertyRef Name="ProductID" />
             </Principal>
             <Dependent Role="OrderItemEnt">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Products" Relationship="BadgerDatabaseModel.FK__Products__Catego__4AB81AF0" FromRole="Category" ToRole="ProductEnt" />
+          <NavigationProperty Name="Products1" Relationship="BadgerDatabaseModel.FK__Products__Catego__778AC167" FromRole="Category" ToRole="ProductEnt" />
+        </EntityType>
+        <EntityType Name="Wishlist">
+          <Key>
+            <PropertyRef Name="WishlistID" />
+          </Key>
+          <Property Name="WishlistID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="DateWishlisted" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Account" Relationship="BadgerDatabaseModel.FK__Wishlist__Userna__4D94879B" FromRole="Wishlist" ToRole="AccountEnt" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK__Wishlist__Produc__4E88ABD4" FromRole="Wishlist" ToRole="ProductEnt" />
+        </EntityType>
+        <EntityType Name="ProductCase">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="Size" />
+            <PropertyRef Name="RGB" />
+            <PropertyRef Name="Material" />
+          </Key>
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RGB" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Material" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK__ProductCa__Produ__6383C8BA" FromRole="ProductCase" ToRole="ProductEnt" />
+        </EntityType>
+        <EntityType Name="ProductCPU">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="Cores" />
+            <PropertyRef Name="Architecture" />
+            <PropertyRef Name="Integratedgpu" />
+            <PropertyRef Name="Speed" />
+            <PropertyRef Name="SocketType" />
+          </Key>
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cores" Type="Int32" Nullable="false" />
+          <Property Name="Architecture" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Integratedgpu" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Speed" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="SocketType" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK__ProductCP__Produ__656C112C" FromRole="ProductCPU" ToRole="ProductEnt" />
+        </EntityType>
+        <EntityType Name="ProductGPU">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="VRAM" />
+            <PropertyRef Name="SLICompatible" />
+            <PropertyRef Name="Size" />
+            <PropertyRef Name="CoreClock" />
+          </Key>
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VRAM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SLICompatible" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Size" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CoreClock" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK__ProductGP__Produ__5EBF139D" FromRole="ProductGPU" ToRole="ProductEnt" />
+        </EntityType>
+        <EntityType Name="ProductHardDrive">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="External" />
+            <PropertyRef Name="SSD" />
+            <PropertyRef Name="Capacity" />
+          </Key>
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="External" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SSD" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Capacity" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK__ProductHa__Produ__619B8048" FromRole="ProductHardDrive" ToRole="ProductEnt" />
+        </EntityType>
+        <EntityType Name="ProductMotherboard">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="SocketType" />
+            <PropertyRef Name="RamSlots" />
+            <PropertyRef Name="M2Compatible" />
+            <PropertyRef Name="SataVersion" />
+            <PropertyRef Name="USBVersion" />
+            <PropertyRef Name="Chipset" />
+          </Key>
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SocketType" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RamSlots" Type="Int32" Nullable="false" />
+          <Property Name="M2Compatible" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SataVersion" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="USBVersion" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Chipset" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK__ProductMo__Produ__6754599E" FromRole="ProductMotherboard" ToRole="ProductEnt" />
+        </EntityType>
+        <EntityType Name="ProductPowerSupply">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="MaxPower" />
+          </Key>
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxPower" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK__ProductPo__Produ__5FB337D6" FromRole="ProductPowerSupply" ToRole="ProductEnt" />
+        </EntityType>
+        <EntityType Name="ProductRam">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="NumOfSticks" />
+            <PropertyRef Name="Voltage" />
+            <PropertyRef Name="Speed" />
+            <PropertyRef Name="Timing" />
+          </Key>
+          <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumOfSticks" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Voltage" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Speed" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Timing" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="BadgerDatabaseModel.FK__ProductRa__Produ__693CA210" FromRole="ProductRam" ToRole="ProductEnt" />
+        </EntityType>
+        <Association Name="FK__Wishlist__Userna__4D94879B">
+          <End Type="BadgerDatabaseModel.AccountEnt" Role="AccountEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.Wishlist" Role="Wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountEnt">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Wishlist">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products__Catego__4AB81AF0">
+          <End Type="BadgerDatabaseModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="ProductEnt">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products__Catego__778AC167">
+          <End Type="BadgerDatabaseModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="ProductEnt">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductCa__Produ__6383C8BA">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductCase" Role="ProductCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductEnt">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductCase">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductCP__Produ__656C112C">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductCPU" Role="ProductCPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductEnt">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductCPU">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductGP__Produ__5EBF139D">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductGPU" Role="ProductGPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductEnt">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductGPU">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductHa__Produ__619B8048">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductHardDrive" Role="ProductHardDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductEnt">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductHardDrive">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductMo__Produ__6754599E">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductMotherboard" Role="ProductMotherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductEnt">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductMotherboard">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductPo__Produ__5FB337D6">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductPowerSupply" Role="ProductPowerSupply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductEnt">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductPowerSupply">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductRa__Produ__693CA210">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.ProductRam" Role="ProductRam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductEnt">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductRam">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Wishlist__Produc__4E88ABD4">
+          <End Type="BadgerDatabaseModel.ProductEnt" Role="ProductEnt" Multiplicity="1" />
+          <End Type="BadgerDatabaseModel.Wishlist" Role="Wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductEnt">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Wishlist">
               <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
@@ -239,6 +956,107 @@
                 <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
                 <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wishlists">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.Wishlist">
+              <MappingFragment StoreEntitySet="Wishlist">
+                <ScalarProperty Name="DateWishlisted" ColumnName="DateWishlisted" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="WishlistID" ColumnName="WishlistID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCases">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.ProductCase">
+              <MappingFragment StoreEntitySet="ProductCase">
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="RGB" ColumnName="RGB" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCPUs">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.ProductCPU">
+              <MappingFragment StoreEntitySet="ProductCPU">
+                <ScalarProperty Name="SocketType" ColumnName="SocketType" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Integratedgpu" ColumnName="Integratedgpu" />
+                <ScalarProperty Name="Architecture" ColumnName="Architecture" />
+                <ScalarProperty Name="Cores" ColumnName="Cores" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductGPUs">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.ProductGPU">
+              <MappingFragment StoreEntitySet="ProductGPU">
+                <ScalarProperty Name="CoreClock" ColumnName="CoreClock" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="SLICompatible" ColumnName="SLICompatible" />
+                <ScalarProperty Name="VRAM" ColumnName="VRAM" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductHardDrives">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.ProductHardDrive">
+              <MappingFragment StoreEntitySet="ProductHardDrive">
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="SSD" ColumnName="SSD" />
+                <ScalarProperty Name="External" ColumnName="External" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductMotherboards">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.ProductMotherboard">
+              <MappingFragment StoreEntitySet="ProductMotherboard">
+                <ScalarProperty Name="Chipset" ColumnName="Chipset" />
+                <ScalarProperty Name="USBVersion" ColumnName="USBVersion" />
+                <ScalarProperty Name="SataVersion" ColumnName="SataVersion" />
+                <ScalarProperty Name="M2Compatible" ColumnName="M2Compatible" />
+                <ScalarProperty Name="RamSlots" ColumnName="RamSlots" />
+                <ScalarProperty Name="SocketType" ColumnName="SocketType" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductPowerSupplies">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.ProductPowerSupply">
+              <MappingFragment StoreEntitySet="ProductPowerSupply">
+                <ScalarProperty Name="MaxPower" ColumnName="MaxPower" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductRams">
+            <EntityTypeMapping TypeName="BadgerDatabaseModel.ProductRam">
+              <MappingFragment StoreEntitySet="ProductRam">
+                <ScalarProperty Name="Timing" ColumnName="Timing" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Voltage" ColumnName="Voltage" />
+                <ScalarProperty Name="NumOfSticks" ColumnName="NumOfSticks" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
               </MappingFragment>
             </EntityTypeMapping>
