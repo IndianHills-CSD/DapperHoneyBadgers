@@ -87,6 +87,55 @@
       <LastGenOutput>BadgerDatabaseModel.cs</LastGenOutput>
     </Content>
     <Content Include="CartLayout.aspx" />
+    <Content Include="images\Cases\Cooler Master H500.jpg" />
+    <Content Include="images\Cases\Cooler Master MasterBox Q300L.jpg" />
+    <Content Include="images\Cases\Corsair Crystal 680X.jpg" />
+    <Content Include="images\Cases\Cougar MG120 Black.jpg" />
+    <Content Include="images\Cases\Fractal Meshify C White.jpg" />
+    <Content Include="images\Cases\Lian Li 011 Dynamic XL.jpg" />
+    <Content Include="images\Cases\NZXT H510i.jpg" />
+    <Content Include="images\CPU\AMD Ryzen 5 1600.jpg" />
+    <Content Include="images\CPU\AMD Ryzen 7 3700X.jpg" />
+    <Content Include="images\CPU\AMD Ryzen Threadripper 2950X.jpg" />
+    <Content Include="images\CPU\Intel Core i5-8600K.jpg" />
+    <Content Include="images\CPU\Intel Core i5-9600K.jpg" />
+    <Content Include="images\CPU\Intel Core i7-9700K.jpg" />
+    <Content Include="images\CPU\Intel Core i9-9900K.jpg" />
+    <Content Include="images\GPU\Asus ROG Strix GeForce RTX 2080 Ti.jpg" />
+    <Content Include="images\GPU\GIGABYTE GeForce RTX 2070 Super WINDFORCE OC 3X.jpg" />
+    <Content Include="images\GPU\GIGABYTE Radeon 5700 XT Gaming OC.jpg" />
+    <Content Include="images\GPU\GIGABYTE Radeon RX 5600 XT.jpg" />
+    <Content Include="images\GPU\MSI GeForce RTX 2060.jpg" />
+    <Content Include="images\GPU\NVidia Titan RTX.jpg" />
+    <Content Include="images\GPU\Zotac Gaming GeForce GTX 1660 Ti.jpg" />
+    <Content Include="images\Hard Drive\Crucial BX500.jpg" />
+    <Content Include="images\Hard Drive\Intel 660p Series M.2 2280.jpg" />
+    <Content Include="images\Hard Drive\Samsung 860 EVO Series.jpg" />
+    <Content Include="images\Hard Drive\Samsung T5.jpg" />
+    <Content Include="images\Hard Drive\Seagate BarraCuda 2TB.jpg" />
+    <Content Include="images\Hard Drive\Seagate IronWolf 8TH NAS HDD.jpg" />
+    <Content Include="images\Hard Drive\WD Red 4TB NAS HDD.jpg" />
+    <Content Include="images\Motherboard\ASRock B450M Steel Legend.jpg" />
+    <Content Include="images\Motherboard\Asus Prime Z270-A.jpg" />
+    <Content Include="images\Motherboard\Asus Prime Z390-A.jpg" />
+    <Content Include="images\Motherboard\Asus ROG Maximus IX Apex.jpg" />
+    <Content Include="images\Motherboard\Asus TUF B450M-Pro.jpg" />
+    <Content Include="images\Motherboard\Gigabyte X399 Designare EX.jpg" />
+    <Content Include="images\Motherboard\MSI MPG Z390 Gaming Plus.jpg" />
+    <Content Include="images\Power Supply\Cooler Master V1000 Platinum.jpg" />
+    <Content Include="images\Power Supply\Corsair AXi Series AX1600i.jpg" />
+    <Content Include="images\Power Supply\Corsair RMx Series RM750x.jpg" />
+    <Content Include="images\Power Supply\Corsair SF Series SF450.jpg" />
+    <Content Include="images\Power Supply\EVGA SuperNOVA 550 GA.jpg" />
+    <Content Include="images\Power Supply\Raidmax Vortex RX-600AE-V.jpg" />
+    <Content Include="images\Power Supply\Rosewill 1600W Modular Power Supply.jpg" />
+    <Content Include="images\Ram\Corsair Vengeance RGB Pro 16GB.jpg" />
+    <Content Include="images\Ram\Corsair Vengeance RGB Pro 32GB.jpg" />
+    <Content Include="images\Ram\G.Skill Ripjaws V Series 16GB.jpg" />
+    <Content Include="images\Ram\G.Skill TridentZ RGB Series 16GB.jpg" />
+    <Content Include="images\Ram\Geil Evo X II AMD Edition 16GB.jpg" />
+    <Content Include="images\Ram\OLOy 32GB.jpg" />
+    <Content Include="images\Ram\Patriot Viper Steel 16GB.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="ItemDetail.aspx" />
     <Content Include="OrderInfo.aspx" />
@@ -128,6 +177,9 @@
     <Compile Include="CartLayout.aspx.designer.cs">
       <DependentUpon>CartLayout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,7 +207,28 @@
     <Compile Include="OrderItemEnt.cs">
       <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProductCase.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCPU.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProductEnt.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductGPU.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductHardDrive.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMotherboard.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPowerSupply.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductRam.cs">
       <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Products.aspx.cs">
@@ -172,6 +245,9 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Wishlist.cs">
+      <DependentUpon>BadgerDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WishlistItem.aspx.cs">
       <DependentUpon>WishlistItem.aspx</DependentUpon>
