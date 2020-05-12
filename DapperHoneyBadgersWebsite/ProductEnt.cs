@@ -18,6 +18,14 @@ namespace DapperHoneyBadgersWebsite
         public ProductEnt()
         {
             this.OrderItems = new HashSet<OrderItemEnt>();
+            this.ProductCases = new HashSet<ProductCase>();
+            this.ProductCPUs = new HashSet<ProductCPU>();
+            this.ProductGPUs = new HashSet<ProductGPU>();
+            this.ProductHardDrives = new HashSet<ProductHardDrive>();
+            this.ProductMotherboards = new HashSet<ProductMotherboard>();
+            this.ProductPowerSupplies = new HashSet<ProductPowerSupply>();
+            this.ProductRams = new HashSet<ProductRam>();
+            this.Wishlists = new HashSet<Wishlist>();
         }
     
         public decimal ProductID { get; set; }
@@ -28,5 +36,23 @@ namespace DapperHoneyBadgersWebsite
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItemEnt> OrderItems { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual Category Category1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductCase> ProductCases { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductCPU> ProductCPUs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductGPU> ProductGPUs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductHardDrive> ProductHardDrives { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductMotherboard> ProductMotherboards { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductPowerSupply> ProductPowerSupplies { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductRam> ProductRams { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Wishlist> Wishlists { get; set; }
     }
 }

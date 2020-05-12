@@ -29,5 +29,14 @@ namespace DapperHoneyBadgersWebsite
         public virtual DbSet<OrderItemEnt> OrderItemEnts { get; set; }
         public virtual DbSet<OrderEnt> OrderEnts { get; set; }
         public virtual DbSet<ProductEnt> ProductEnts { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Wishlist> Wishlists { get; set; }
+        public virtual DbSet<ProductCase> ProductCases { get; set; }
+        public virtual DbSet<ProductCPU> ProductCPUs { get; set; }
+        public virtual DbSet<ProductGPU> ProductGPUs { get; set; }
+        public virtual DbSet<ProductHardDrive> ProductHardDrives { get; set; }
+        public virtual DbSet<ProductMotherboard> ProductMotherboards { get; set; }
+        public virtual DbSet<ProductPowerSupply> ProductPowerSupplies { get; set; }
+        public virtual DbSet<ProductRam> ProductRams { get; set; }
     }
 }

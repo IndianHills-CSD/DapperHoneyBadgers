@@ -371,35 +371,44 @@ table tr td:last-child {
     padding: 20px 0;
 }
 
+.gridItem > img {
+    height: 175px;
+    width: 200px;
+}
+
 /* Product Meta */
 .meta {
     position: relative;
-    margin: 10px 0 0;
-    padding: 0 60px 0 0;
+    margin: 5px 0 0;
+    padding: 0;
     text-align: left;
 }
 
 .meta__brand {
-    font-size: .85em;
+    font-size: .65em;
     font-weight: bold;
     display: block;
     color: #2793bf;
 }
 
 .meta__title {
-    font-size: .95em;
+    font-size: .85em;
     font-weight: bold;
     margin: 0;
-    padding: .4em 0 .1em;
 }
 
 .meta__price {
     font-size: .95em;
     font-weight: bold;
     position: absolute;
-    top: .45em;
-    right: .25em;
+    top: 1.5em;
+    right: 4.5em;
     color: red;
+    width: 0px;
+}
+
+.action {
+    margin: 25px 0 0 115px;
 }
 
 /*  ---------------------------- Item Details Page ---------------------------- */

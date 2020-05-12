@@ -18,6 +18,7 @@ namespace DapperHoneyBadgersWebsite
         public AccountEnt()
         {
             this.Orders = new HashSet<OrderEnt>();
+            this.Wishlists = new HashSet<Wishlist>();
         }
     
         public string Username { get; set; }
@@ -27,5 +28,7 @@ namespace DapperHoneyBadgersWebsite
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderEnt> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Wishlist> Wishlists { get; set; }
     }
 }

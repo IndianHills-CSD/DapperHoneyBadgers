@@ -12,6 +12,35 @@
         <AssociationConnector Association="BadgerDatabaseModel.FK_OrderItems_ToOrders" />
         <EntityTypeShape EntityType="BadgerDatabaseModel.ProductEnt" Width="1.5" PointX="10" PointY="1.75" />
         <AssociationConnector Association="BadgerDatabaseModel.FK_OrderItems_ToProducts" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.ProductCPU" Width="1.5" PointX="12" PointY="3.625" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductCP__Produ__656C112C" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.Category" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.ProductCase" Width="1.5" PointX="12.25" PointY="12.5" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.ProductGPU" Width="1.5" PointX="12.25" PointY="9.375" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.ProductHardDrive" Width="1.5" PointX="12.25" PointY="6.375" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.ProductMotherboard" Width="1.5" PointX="12.25" PointY="21" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.ProductPowerSupply" Width="1.5" PointX="12.25" PointY="15.375" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.ProductRam" Width="1.5" PointX="12.25" PointY="17.875" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__Products__Catego__4AB81AF0" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__Products__Catego__778AC167" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductCa__Produ__6383C8BA" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductGP__Produ__5EBF139D" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductHa__Produ__619B8048" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductMo__Produ__6754599E" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductPo__Produ__5FB337D6" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductRa__Produ__693CA210" />
+        <EntityTypeShape EntityType="BadgerDatabaseModel.Wishlist" Width="1.5" PointX="12.25" PointY="2.125" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__Wishlist__Userna__4D94879B" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__Products__Catego__4AB81AF0" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__Products__Catego__778AC167" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductCa__Produ__6383C8BA" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductCP__Produ__656C112C" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductGP__Produ__5EBF139D" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductHa__Produ__619B8048" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductMo__Produ__6754599E" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductPo__Produ__5FB337D6" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__ProductRa__Produ__693CA210" />
+        <AssociationConnector Association="BadgerDatabaseModel.FK__Wishlist__Produc__4E88ABD4" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
